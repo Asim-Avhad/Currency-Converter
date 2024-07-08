@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #222831, #000);
+    background-attachment: fixed;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+::selection {
+    color: #000;
+    background: #fff;
+}
+
+.outside {
+    width: 370px;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: rgba(34, 40, 49, 0.7); /* Adjust opacity for the glass effect */
+    color: #fff;
+    position: relative; /* Ensure stacking context */
+    z-index: 1; /* Ensure it's above the backdrop-filter */
+}
+
+.outside header {
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.outside form {
+    margin: 40px 0 20px 0;
+}
+
+form :where(input, select) {
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #444;
+    color: #fff;
+}
+
+form p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+form input {
+    height: 50px;
+    font-size: 17px;
+    padding: 0 15px;
+    background: #393e46;
+}
+
+.select-box select {
+    width: 100%;
+    font-size: 16px;
+    background: none;
+    margin: 0 -5px 0 5px;
+    color: #000;
+}
+
+.select-box select::-webkit-scrollbar {
+    width: 8px;
+}
+
+.select-box select::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.select-box select::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+    border-right: 2px solid #fff;
+}
+
+.drop-list .icon {
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 22px;
+    color: #fff;
+}
+
+form input:focus {
+    padding: 0 14px;
+    border: 2px solid #00adb5;
+    background-color: #222831;
+}
+
+form .drop-list {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drop-list .select-box {
+    display: flex;
+    width: 115px;
+    height: 45px;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    border: 1px solid #393e46;
+    background-color: #eeeeee;
+    color: #000;
+}
+
+.select-box img {
+    max-width: 21px;
+}
+
+form .exchange-rate {
+    font-size: 17px;
+    margin: 20px 0 30px;
+}
+
+form button {
+    height: 52px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    background: #393e46;
+    transition: background 0.3s ease, transform 0.2 ease;
+}
+
+form button:hover {
+    background: #00adb5;
+}
+
+form button:active {
+    transform: scale(0.95);
+}
